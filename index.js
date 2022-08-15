@@ -7,7 +7,8 @@ var result = 0
 function computeResult(op){
     var num  = input.value
     var prev = result
-    if (num == ''){
+    console.log(op.length)
+    if (num == '' || op.length != 1){
         return true
     }
     result = eval(result + op + parseInt(num))
@@ -16,7 +17,9 @@ function computeResult(op){
 }
 wrapper.addEventListener('click', function(evt) {
     let element = evt.target;  
+    
     operator = element.textContent
+    console.log(operator)
     computeResult(operator)
   });
 
